@@ -14,5 +14,6 @@ public class New_Q {
             }
         }
         System.out.println(sum);
+        System.out.println("hello");
     }
 }
