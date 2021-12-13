@@ -6,6 +6,5 @@ public class New_Q {
         String s2 = new String(data);
         s2 = s2.concat("JAVA");
         System.out.println(s2);
-        System.out.println("Hello");
     }
 }
