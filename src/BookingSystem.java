@@ -73,7 +73,7 @@ public class BookingSystem {
     void Run(){
         while(true){
             System.out.print("예약:1, 조회:2, 최소:3, 끝내기:4>>");
-            int chooseNumber = scanner.nextInt(); //chooseNumber = 첫 화면에서 고르는 숫자
+            int chooseNumber = scanner.nextInt(); //chooseNumber = 첫 화면에서 고르는 숫자A
             if(chooseNumber==4) {break;}
             else if(chooseNumber==3) Cancel();
             else if(chooseNumber==2) {
