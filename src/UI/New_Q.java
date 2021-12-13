@@ -1,10 +1,18 @@
+import java.util.StringTokenizer;
+
 public class New_Q {
     public static void main(String[] args){
-        String s1 = "abcd";
-        String s4 = "abcd";
-        char [] data={'a','b','c','d'};
-        String s2 = new String(data);
-        s2 = s2.concat("JAVA");
-        System.out.println(s2);
+        StringTokenizer st = new StringTokenizer("a=3,b=5,c=6", ",=");
+        int sum=0;
+        while (st.hasMoreTokens()) {
+            String next = st.nextToken();
+            try{
+                sum+=Integer.parseInt(next);
+                System.out.println(next);
+            }catch(NumberFormatException e){
+                System.out.println(next);
+            }
+        }
+        System.out.println(sum);
     }
 }
