@@ -16,7 +16,7 @@ class Nation{
         return capital;
     }
 }
-public class P439_11 {
+public class P439_11_1 {
     Scanner scanner = new Scanner(System.in);
     Vector<Nation> vector =new Vector<>();
     void run(){
@@ -84,7 +84,7 @@ public class P439_11 {
         return false;
     }
     public static void main(String[] args){
-        P439_11 project = new P439_11();
+        P439_11_1 project = new P439_11_1();
         project.run();
     }
 }
