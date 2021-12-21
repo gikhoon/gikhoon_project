@@ -2,8 +2,8 @@ package UI;
 
 import java.util.*;
 class Instruction{
-    private String operator;
-    private String [] oper = new String[2];
+    private final String operator;
+    private final String [] oper = new String[2];
     Instruction(String line){
         StringTokenizer st = new StringTokenizer(line," ");
         operator = st.nextToken();
@@ -42,9 +42,7 @@ public class P441_13 {
                     sub(program.get(i));
                     break;
                 case "jn0":
-                    if(jn0(program.get(i))){
-                        break;
-                    }
+                    if(jn0(program.get(i))) break;
                     else{
                         int num = goTo(program.get(i));
                         i=num-1;
@@ -66,7 +64,7 @@ public class P441_13 {
                 if (line.equals("exit")) {
                     moveAgain = false;
                     return;
-                } else if (line.toUpperCase().equals("GO")) break;
+                } else if (line.equalsIgnoreCase("GO")) break;
                 else program.add(new Instruction(line));
             }
             catch(NoSuchElementException e){
@@ -115,8 +113,7 @@ public class P441_13 {
     boolean jn0(Instruction i){
         String zeroVar = i.getOper(0);
         if(variable.containsKey(zeroVar)) {
-            if(variable.get(zeroVar)==0) return true;
-            else return false;
+            return variable.get(zeroVar) == 0;
         }
         System.out.println(zeroVar+"은 존재하지 않습니다. 다음 명령으로 넘어갑니다");
         return true;
