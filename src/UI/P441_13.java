@@ -1,6 +1,7 @@
 package UI;
 
 import java.util.*;
+
 class Instruction{
     private final String operator;
     private final String [] oper = new String[2];
@@ -19,9 +20,8 @@ class Instruction{
     public String toString(){
         return "["+operator+" "+oper[0]+" "+oper[1]+"]";
     }
-
-
 }
+
 public class P441_13 {
     Scanner scanner = new Scanner(System.in);
     HashMap<String, Integer> variable = new HashMap<>();
@@ -80,7 +80,6 @@ public class P441_13 {
         catch (NumberFormatException e){
             error(i);
         }
-
     }
     void add(Instruction i){
         String addNum = i.getOper(0);
