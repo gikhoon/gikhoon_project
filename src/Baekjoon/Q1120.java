@@ -10,23 +10,15 @@ public class Q1120 {
         int aLength = a.length();
         int bLength = b.length();
         int indexDifferenceLength = bLength-aLength;
-        int addFirstLetterError = 0;
-        int addLastLetterError = 0;
-        for(int i=0;i<aLength;i++){
-            if(a.charAt(i)!=b.charAt(i)){
-                addLastLetterError++;
+        int lessDifference= aLength;
+        for(int i=0;i<=indexDifferenceLength;i++){
+            int currentDifference =0;
+            for(int j=0;j<aLength;j++){
+                if(a.charAt(j)!=b.charAt(j+i)) currentDifference++;
             }
+            if(currentDifference<lessDifference) lessDifference = currentDifference;
         }
-        a=b.substring(0,indexDifferenceLength)+a;
-        for(int i=0;i<bLength;i++){
-            if(a.charAt(i)!=b.charAt(i)){
-                addFirstLetterError++;
-            }
-        }
-        int difference;
-        if(addFirstLetterError>addLastLetterError) difference=addLastLetterError;
-        else difference=addFirstLetterError;
-        System.out.println(difference);
+        System.out.println(lessDifference);
     }
     public static void main(String[] args){
         Q1120 q1120 =new Q1120();
