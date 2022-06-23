@@ -3,6 +3,7 @@ package BaekJoon15652;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     static int[] arr;
@@ -11,9 +12,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         String s = bf.readLine();
-        String[] ss = s.split(" ");
-        int n = Integer.parseInt(ss[0]);
-        int m = Integer.parseInt(ss[1]);
+        StringTokenizer ss = new StringTokenizer(s);
+        int n = Integer.parseInt(ss.nextToken());
+        int m = Integer.parseInt(ss.nextToken());
         arr = new int[m];
         MakeSequence(n,m,0);
         System.out.println(s2);
